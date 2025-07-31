@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人主页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 0;
+            background: rgba(0, 0, 0, 0.3);
+            margin-bottom: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 30px rgba(0, 119, 255, 0.3);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 20px rgba(0, 119, 255, 0.3);
+            }
+            to {
+                box-shadow: 0 0 30px rgba(0, 119, 255, 0.6), 0 0 40px rgba(0, 119, 255, 0.3);
+            }
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #00dbde, #0066ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(0, 219, 222, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 119, 255, 0.3);
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #00dbde;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #00dbde, #0066ff);
+            border-radius: 3px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .skill-tag {
+            background: linear-gradient(90deg, #00dbde, #0066ff);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            box-shadow: 0 0 15px rgba(0, 219, 222, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            transform: scale(1.1);
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .project-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 119, 255, 0.3);
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .project-desc {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+
+        .download-link {
+            display: inline-block;
+            background: linear-gradient(90deg, #00dbde, #0066ff);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(0, 219, 222, 0.3);
+        }
+
+        .download-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 119, 255, 0.5);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .thanks {
+            margin-bottom: 20px;
+        }
+
+        .declaration {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* 粒子背景效果 */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            h2 {
+                font-size: 1.7rem;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+            
+            header {
+                padding: 40px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    
+    <div class="container">
+        <header>
+            <h1>个人主页</h1>
+            <p class="subtitle">欢迎来到我的个人主页！</p>
+        </header>
+        
+        <section class="section">
+            <h2>关于我</h2>
+            <p>我是一名热爱技术的开发者，专注于后端开发和数据库管理。</p>
+        </section>
+        
+        <section class="section">
+            <h2>技能</h2>
+            <div class="skills">
+                <div class="skill-tag">后端开发</div>
+                <div class="skill-tag">数据库管理</div>
+                <div class="skill-tag">Web 应用开发</div>
+                <div class="skill-tag">Delphi</div>
+                <div class="skill-tag">Python</div>
+                <div class="skill-tag">系统架构</div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>项目</h2>
+            <div class="projects">
+                <div class="project-card">
+                    <h3 class="project-title">Weight2025（windows）</h3>
+                    <p class="project-desc">Weight2025 是一款采用 Delphi7 开发的称重管理软件，仅支持 Windows XP 及以上操作系统。</p>
+                    <a href="#" class="download-link">下载地址</a>
+                </div>
+                
+                <div class="project-card">
+                    <h3 class="project-title">web网络查询管理</h3>
+                    <p class="project-desc">"web 网络查询管理" 是一款基于 Python 开发的应用程序，用于查询 Weight2025 软件的数据，支持 Windows、Mac 及 Linux 操作系统。</p>
+                    <a href="#" class="download-link">下载地址</a>
+                </div>
+                
+                <div class="project-card">
+                    <h3 class="project-title">车牌识别-HK</h3>
+                    <p class="project-desc">"车牌识别-HK" 是一款基于 Python 开发的应用程序，用于识别进出场的车牌，支持 Windows、Mac 及 Linux 操作系统。适配海康威视车牌识别相机</p>
+                    <a href="#" class="download-link">下载地址</a>
+                </div>
+                
+                <div class="project-card">
+                    <h3 class="project-title">车牌识别管理软件-新版wtyclntctrl</h3>
+                    <p class="project-desc">"车牌识别管理软件-新版wtyclntctrl" 是一款基于 Delphi7 开发的应用程序，用于管理车牌识别的相关数据，仅支持 Windows XP 及以上操作系统。适配文通科技新版车牌识别相机</p>
+                    <a href="#" class="download-link">下载地址</a>
+                </div>
+                
+                <div class="project-card">
+                    <h3 class="project-title">车牌识别管理软件-PlatePro</h3>
+                    <p class="project-desc">"车牌识别管理软件-PlatePro" 是一款基于 Delphi7 开发的应用程序，用于管理车牌识别的相关数据，仅支持 Windows XP 及以上操作系统。适配旧版文通科技车牌识别相机</p>
+                    <a href="#" class="download-link">下载地址</a>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <div class="thanks">
+                <h2>感谢</h2>
+                <p>感谢所有支持我的人</p>
+                <p>感谢所有分享知识的人</p>
+            </div>
+            <p class="declaration">本个人主页仅用于展示我的个人信息和项目作品，不包含任何盈利目的。</p>
+        </footer>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // 初始化粒子背景
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 80,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: '#00dbde'
+                },
+                shape: {
+                    type: 'circle',
+                    stroke: {
+                        width: 0,
+                        color: '#000000'
+                    }
+                },
+                opacity: {
+                    value: 0.5,
+                    random: false
+                },
+                size: {
+                    value: 3,
+                    random: true
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#0066ff',
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: 'none',
+                    random: true,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: 'repulse'
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: 'push'
+                    },
+                    resize: true
+                }
+            },
+            retina_detect: true
+        });
+    </script>
+</body>
+</html>
