@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<softwares>
+    <software>
+        <name>车辆称重管理系统</name>
+        <current_version>1.0.0</current_version>
+        <release_date>2023-01-01</release_date>
+        <download_links>
+            <link platform="windows" version="1.0.0">https://example.com/downloads/vehicle_weight_system_v1.0.0.exe</link>
+            <link platform="mac" version="1.0.0">https://example.com/downloads/vehicle_weight_system_v1.0.0.dmg</link>
+            <link platform="linux" version="1.0.0">https://example.com/downloads/vehicle_weight_system_v1.0.0.deb</link>
+        </download_links>
+        <changelog>
+            <version number="1.0.0">
+                <item>初始版本发布</item>
+                <item>实现车辆称重记录功能</item>
+                <item>连接SQL Server数据库</item>
+            </version>
+        </changelog>
+    </software>
+    <software>
+        <name>仓库库存管理系统</name>
+        <current_version>2.1.5</current_version>
+        <release_date>2023-05-15</release_date>
+        <download_links>
+            <link platform="windows" version="2.1.5">https://example.com/downloads/warehouse_system_v2.1.5.exe</link>
+            <link platform="mac" version="2.1.5">https://example.com/downloads/warehouse_system_v2.1.5.dmg</link>
+            <link platform="linux" version="2.1.5">https://example.com/downloads/warehouse_system_v2.1.5.deb</link>
+        </download_links>
+        <changelog>
+            <version number="2.1.5">
+                <item>新增条形码扫描功能</item>
+                <item>优化库存查询性能</item>
+                <item>修复已知bug</item>
+            </version>
+        </changelog>
+    </software>
+</softwares>
