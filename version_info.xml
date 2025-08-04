@@ -1,36 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <softwares>
     <software>
-        <name>车辆称重管理系统</name>
-        <current_version>1.0.0</current_version>
-        <release_date>2023-01-01</release_date>
+        <name>Weight2025</name>
+        <current_version>2025</current_version>
+        <release_date>2025-08-04</release_date>
         <download_links>
-            <link platform="windows" version="1.0.0">https://example.com/downloads/vehicle_weight_system_v1.0.0.exe</link>
-            <link platform="mac" version="1.0.0">https://example.com/downloads/vehicle_weight_system_v1.0.0.dmg</link>
-            <link platform="linux" version="1.0.0">https://example.com/downloads/vehicle_weight_system_v1.0.0.deb</link>
+            <link platform="windows" version="2025">https://gitee.com/panglongfei/weight2025/releases/download/%E7%A7%B0%E9%87%8D%E8%BD%AF%E4%BB%B62025%E7%89%88/Weight2025.zip</link>
         </download_links>
         <changelog>
-            <version number="1.0.0">
-                <item>初始版本发布</item>
+            <version number="2025">
+                <item>标准版本发布</item>
                 <item>实现车辆称重记录功能</item>
                 <item>连接SQL Server数据库</item>
             </version>
         </changelog>
     </software>
     <software>
-        <name>仓库库存管理系统</name>
-        <current_version>2.1.5</current_version>
-        <release_date>2023-05-15</release_date>
+        <name>web网络查询管理</name>
+        <current_version>1.0.0</current_version>
+        <release_date>2025-08-04</release_date>
         <download_links>
-            <link platform="windows" version="2.1.5">https://example.com/downloads/warehouse_system_v2.1.5.exe</link>
-            <link platform="mac" version="2.1.5">https://example.com/downloads/warehouse_system_v2.1.5.dmg</link>
-            <link platform="linux" version="2.1.5">https://example.com/downloads/warehouse_system_v2.1.5.deb</link>
+            <link platform="windows" version="1.0.0">https://gitee.com/panglongfei/web-network-query-management/releases/download/web%E7%BD%91%E7%BB%9C%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2/web-network-query-management.zip</link>
         </download_links>
         <changelog>
-            <version number="2.1.5">
-                <item>新增条形码扫描功能</item>
-                <item>优化库存查询性能</item>
-                <item>修复已知bug</item>
+            <version number="1.0.0">
+                <item>标准版本发布</item>
+                <item>实现车辆称重记录查询功能</item>
+                <item>实现AI报告功能</item>
+            </version>
+        </changelog>
+    </software>
+    <software>
+        <name>车牌识别-海康</name>
+        <current_version>1.0.0</current_version>
+        <release_date>2025-08-04</release_date>
+        <download_links>
+            <link platform="windows" version="1.0.0">https://gitee.com/panglongfei/license-plate-recognition-HK/releases/download/%E8%BD%A6%E7%89%8C%E8%AF%86%E5%88%AB%E8%BD%AF%E4%BB%B6-%E6%B5%B7%E5%BA%B7%E5%A8%81%E8%A7%86%E7%89%88/license-plate-recognition-HK.zip</link>
+        </download_links>
+        <changelog>
+            <version number="1.0.0">
+                <item>标准版本发布</item>
+                <item>实现车辆称重记录查询功能</item>
+                <item>实现车牌识别功能</item>
             </version>
         </changelog>
     </software>
