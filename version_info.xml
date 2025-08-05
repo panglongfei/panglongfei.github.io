@@ -23,7 +23,7 @@
             <link platform="windows" version="1.0.0">https://gitee.com/panglongfei/web-network-query-management/releases/download/web%E7%BD%91%E7%BB%9C%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2/web-network-query-management.zip</link>
         </download_links>
         <changelog>
-            <version number="1.0.0">
+            <version number="1.0.1">
                 <item>标准版本发布</item>
                 <item>实现车辆称重记录查询功能</item>
                 <item>实现AI报告功能</item>
